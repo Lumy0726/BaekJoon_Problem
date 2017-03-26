@@ -59,6 +59,7 @@ int Target_num(int x1, int y1, unsigned r1, int x2, int y2, unsigned r2) {
 	}
 	else {//두 좌표가 다른 경우.
 		"Code add";
+		"";
 		return 0;
 	}
 }
