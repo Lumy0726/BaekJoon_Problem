@@ -32,17 +32,14 @@ void Sol(unsigned Input);
 int main(int arg_num, char * argv[], char * env[]) {
 	unsigned Test_case;
 	int Loop1;
-	unsigned *Num;
-	cin >> Test_case;
-	Num = new unsigned[Test_case];
-	for (Loop1 = 0; Loop1 < (int)Test_case; Loop1++) {
-		cin >> Num[Loop1];
-	}
-	for (Loop1 = 0; Loop1 < (int)Test_case; Loop1++){
-		Sol(Num[Loop1]);
-	}
+	unsigned Num;
 
-	delete[] Num;
+	cin >> Test_case;
+	for (Loop1 = 0; Loop1 < (int)Test_case; Loop1++) {
+		cin >> Num;
+		Sol(Num);
+	}
+	
 	return 0;
 }
 

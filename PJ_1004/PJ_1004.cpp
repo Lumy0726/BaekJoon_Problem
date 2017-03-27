@@ -28,9 +28,10 @@ struct C_circle :public C_coord{
 struct C_prince_move {
 	C_coord Start_dot, End_dot;
 	vector<C_circle> Planet;
-	C_prince_move();
+	C_prince_move() { ; }
 	C_prince_move(C_coord Start, C_coord End, vector<C_circle> _Planet) :
 		Start_dot(Start), End_dot(End), Planet(_Planet) { ; }
+	void Input();
 	unsigned Check_movenum()const;
 };
 
@@ -43,13 +44,11 @@ int Power(int Num, unsigned exp);
 //main
 int main(int arg_num, char * argv[], char * env[]) {
 	unsigned Test_case, Loop1;
-	vector<C_prince_move> Prince_move;
+	C_prince_move Prince_move;
 	cin >> Test_case;
-	for (Loop1 = 0; Loop1 < Test_case; Loop1++) {//각각의 테스트 케이스에 대해 입력.
-		Prince_move.push_back(C_prince_move());//입력 구문.
-	}
 	for (Loop1 = 0; Loop1 < Test_case; Loop1++) {//각각의 테스트 케이스에 대해 출력.
-		cout << Prince_move.at(Loop1).Check_movenum() << endl;
+		Prince_move.Input();//입력 구문.
+		cout << Prince_move.Check_movenum() << endl;
 	}
 	return 0;
 }
@@ -75,19 +74,6 @@ bool C_circle::Dot_is_in(C_coord Dot) const {
 	int Distance = Power(Temp.X, 2) + Power(Temp.Y, 2);//원의 중심과 들어온 좌표의 거리의 제곱.
 	return Distance < Power(Radius, 2);//좌표가 원 안에 있는 경우 true리턴(경계선 제외).
 }
-C_prince_move::C_prince_move() {
-	unsigned Planet_num, R_temp, Loop1;
-	int X_temp, Y_temp;
-	cin >> X_temp >> Y_temp;
-	Start_dot = C_coord(X_temp, Y_temp);
-	cin >> X_temp >> Y_temp;
-	End_dot = C_coord(X_temp, Y_temp);
-	cin >> Planet_num;
-	for (Loop1 = 0; Loop1 < Planet_num; Loop1++) {//각각의 행성계를 입력받음.
-		cin >> X_temp >> Y_temp >> R_temp;
-		Planet.push_back(C_circle(X_temp, Y_temp, R_temp));
-	}
-}
 unsigned C_prince_move::Check_movenum()const {
 	vector<C_circle>::const_iterator One_planet;
 	unsigned Movenum = 0;
@@ -97,6 +83,20 @@ unsigned C_prince_move::Check_movenum()const {
 		}
 	}
 	return Movenum;
+}
+void C_prince_move::Input() {
+	unsigned Planet_num, R_temp, Loop1;
+	int X_temp, Y_temp;
+	if (!Planet.empty()) { Planet.clear(); }//행성 기록 지우기.
+	cin >> X_temp >> Y_temp;
+	Start_dot = C_coord(X_temp, Y_temp);
+	cin >> X_temp >> Y_temp;
+	End_dot = C_coord(X_temp, Y_temp);
+	cin >> Planet_num;
+	for (Loop1 = 0; Loop1 < Planet_num; Loop1++) {//각각의 행성계를 입력받음.
+		cin >> X_temp >> Y_temp >> R_temp;
+		Planet.push_back(C_circle(X_temp, Y_temp, R_temp));
+	}
 }
 
 //verge

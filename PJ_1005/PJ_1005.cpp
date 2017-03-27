@@ -39,7 +39,7 @@ int main(int arg_num, char * argv[], char * env[]) {
 void C_problem::Input() {
 
 }
-void C_problem::Ouput() const{
+void C_problem::Ouput() const {
 
 }
 //verge
