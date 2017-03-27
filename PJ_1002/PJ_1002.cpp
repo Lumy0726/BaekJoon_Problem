@@ -33,7 +33,6 @@ int main(int arg_num, char * argv[], char * env[]) {
 	for (Loop1 = 0; Loop1 < (int)Test_case; Loop1++) {
 		cin >> x1[Loop1] >> y1[Loop1] >> r1[Loop1] >> x2[Loop1] >> y2[Loop1] >> r2[Loop1];
 	}
-	cout << endl;
 
 	//결과 출력.
 	for (Loop1 = 0; Loop1 < (int)Test_case; Loop1++) {

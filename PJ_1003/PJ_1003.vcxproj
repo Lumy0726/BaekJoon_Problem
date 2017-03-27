@@ -19,9 +19,9 @@
     </ProjectConfiguration>
   </ItemGroup>
   <PropertyGroup Label="Globals">
-    <ProjectGuid>{ABE22267-3300-430A-975A-63CFE854CF58}</ProjectGuid>
+    <ProjectGuid>{4E139F9A-C46F-402C-9DBF-43D8F547AC25}</ProjectGuid>
     <Keyword>Win32Proj</Keyword>
-    <RootNamespace>PJ_1001</RootNamespace>
+    <RootNamespace>PJ_1003</RootNamespace>
     <WindowsTargetPlatformVersion>8.1</WindowsTargetPlatformVersion>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
@@ -146,7 +146,7 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="PJ_1001.cpp" />
+    <ClCompile Include="PJ_1003.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
