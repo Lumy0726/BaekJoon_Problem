@@ -1,8 +1,10 @@
 #include <iostream>
+#include <vector>
 #include <assert.h>
 using std::cout;
 using std::cin;
 using std::endl;
+using std::vector;
 
 //Project_Euler Problem
 //PAEKJOON online judge Problem

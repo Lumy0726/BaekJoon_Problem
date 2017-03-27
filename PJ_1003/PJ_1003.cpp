@@ -17,10 +17,10 @@ class Coord {
 public:
 	int a0, a1;
 	Coord(int _a0, int _a1) : a0(_a0), a1(_a1) { ; }
-	Coord operator+(const Coord &Input) {
+	Coord operator+(const Coord &Input) const{
 		return Coord(a0 + Input.a0, a1 + Input.a1);
 	}
-	Coord operator-(const Coord &Input) {
+	Coord operator-(const Coord &Input) const{
 		return Coord(a0 - Input.a0, a1 - Input.a1);
 	}
 };
