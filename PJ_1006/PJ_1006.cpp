@@ -1,5 +1,4 @@
 #include <iostream>
-#include <assert.h>
 using std::cout;
 using std::cin;
 using std::endl;
@@ -61,7 +60,7 @@ void Ouput() {
 	int Answer = Area_num * 2;
 
 	//convert data to Area_connect
-	for (Loop1 = 0, Temp1=0; Loop1 < 2; Loop1++, Temp1+=2) {//HIGH_ROW, LOW_ROW.
+	for (Loop1 = 0, Temp1 = 0; Loop1 < 2; Loop1++, Temp1 += 2) {//HIGH_ROW, LOW_ROW.
 		for (Loop2 = 0; Loop2 < Area_num - 1; Loop2++) {
 			if (Entity_num[Loop1][Loop2] + Entity_num[Loop1][Loop2 + 1] <= Member_num) //대원들 같이 투입가능.
 				Area_connect[Temp1][Loop2].Is_connect = true;
@@ -105,7 +104,7 @@ void Ouput() {
 	}
 	cout << Answer << endl;
 }
-bool Lose_check(){
+bool Lose_check() {
 	unsigned Loop1, Loop2;
 	bool Is_end = true;
 	//초기화.
@@ -122,7 +121,7 @@ bool Lose_check(){
 				switch (Loop1) {
 				case 0:
 					Area_connect[HIGH_ROW][(Loop2) ? (Loop2 - 1) : (Area_num - 1)].Lose_num++;//왼쪽.
-					Area_connect[HIGH_ROW][(Loop2!=Area_num - 1) ? (Loop2 + 1) : (0)].Lose_num++;//오른쪽.
+					Area_connect[HIGH_ROW][(Loop2 != Area_num - 1) ? (Loop2 + 1) : (0)].Lose_num++;//오른쪽.
 					Area_connect[MID_ROW][Loop2].Lose_num++;//왼쪽아래.
 					Area_connect[MID_ROW][(Loop2 != Area_num - 1) ? (Loop2 + 1) : (0)].Lose_num++;//오른쪽아래.
 					break;

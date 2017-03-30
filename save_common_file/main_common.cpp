@@ -8,6 +8,8 @@ using std::endl;
 //PAEKJOON online judge Problem
 //¹®Á¦.
 
+//system("mode con cols=80 lines=25");
+//system("color f0");
 //mecro
 #define NUM_100 100
 #define NUM_1000 1000
