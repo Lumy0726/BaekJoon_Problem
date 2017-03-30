@@ -7,11 +7,6 @@ using std::endl;
 //문제.
 
 //mecro
-#define NUM_100 100
-#define NUM_1000 1000
-#define NUM_10000 10000
-#define NUM_100000 100000
-#define NUM_1000000 1000000
 #define MAX_TOWER_NUM 1000
 #define MAX_TOWER_RULE 100000
 
@@ -25,7 +20,7 @@ struct C_tower_route {
 
 //variable
 unsigned Win_tower_num;//승리할수 있는 건물번호.
-//Tower_time[건물번호] = 건물을 짓는데 걸리는 시간.
+											 //Tower_time[건물번호] = 건물을 짓는데 걸리는 시간.
 unsigned Tower_time[MAX_TOWER_NUM];
 unsigned Tower_time_snum;
 //Tower_rule[건물번호] = 건물규칙
@@ -71,7 +66,7 @@ void Input() {
 	//건물건설시간 입력.
 	for (Loop1 = 0; Loop1 < Tower_num; Loop1++) {
 		cin >> Input1;
-		Tower_time[Tower_time_snum++]=Input1;
+		Tower_time[Tower_time_snum++] = Input1;
 	}
 	//건물건설규칙 입력.
 	for (Loop1 = 0; Loop1 < Rule_num; Loop1++) {
@@ -87,7 +82,7 @@ void Ouput() {
 	unsigned Time_max;
 	unsigned Loop1, Temp1;
 	C_tower_route Temp_last_route;
-	
+
 	Tower_route_snum = 0;
 	for (Loop1 = 0; Loop1 < Tower_time_snum; Loop1++) {
 		Tower_connector_snum2[Loop1] = 0;
@@ -129,7 +124,7 @@ void Ouput() {
 			Tower_time[Temp_last_route.Tower_num] += Time_max;
 			Tower_connector_snum2[Temp_last_route.Tower_num] = 0;//선행 건물들을 전부 점검하고 시간을 더했으므로 더이상 선행건물 필요없음.
 			Tower_route_snum--;//Tower_route되돌리기.
-			if (Tower_route_snum==0) {//타워 순회 완료.
+			if (Tower_route_snum == 0) {//타워 순회 완료.
 				break;
 			}
 			Last_tower_route().Tower_connector_num++;//다른 타워를 순회하도록 함.

@@ -15,10 +15,7 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="PJ_1005_array.cpp">
-      <Filter>소스 파일</Filter>
-    </ClCompile>
-    <ClCompile Include="PJ_1005_vector.cpp">
+    <ClCompile Include="PJ_1006.cpp">
       <Filter>소스 파일</Filter>
     </ClCompile>
   </ItemGroup>
