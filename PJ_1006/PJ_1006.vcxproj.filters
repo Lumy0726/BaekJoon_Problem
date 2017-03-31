@@ -18,5 +18,13 @@
     <ClCompile Include="PJ_1006.cpp">
       <Filter>소스 파일</Filter>
     </ClCompile>
+    <ClCompile Include="Coordinate_Outputstream.cpp">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="Coordinate_Outputstream.h">
+      <Filter>소스 파일</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>
