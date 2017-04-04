@@ -18,9 +18,9 @@ struct C_tower_route {
 	unsigned Tower_num, Tower_connector_num;
 };
 
-//variable
+//Global variable
 unsigned Win_tower_num;//승리할수 있는 건물번호.
-											 //Tower_time[건물번호] = 건물을 짓는데 걸리는 시간.
+//Tower_time[건물번호] = 건물을 짓는데 걸리는 시간.
 unsigned Tower_time[MAX_TOWER_NUM];
 unsigned Tower_time_snum;
 //Tower_rule[건물번호] = 건물규칙
