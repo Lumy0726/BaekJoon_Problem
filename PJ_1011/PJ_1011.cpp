@@ -3,7 +3,7 @@ using std::cout;
 using std::cin;
 using std::endl;
 
-//PAEKJOON online judge Problem1010.
+//PAEKJOON online judge Problem1011.
 //문제.
 
 //system("mode con cols=80 lines=25");
@@ -18,8 +18,7 @@ using std::endl;
 //type, class
 
 //variable
-unsigned n;
-unsigned r;
+
 //function
 void input();
 void output();
@@ -38,18 +37,9 @@ int main(int arg_num, char * argv[], char * env[]) {
 
 //function define
 void input() {
-	cin >> r >> n;
+
 }
-void output() {//nCr구함.
-	long long unsigned answer = 1;
-	int loop1;
-	(n - r < r) ? r = n - r : 0;
-	for (loop1 = n; loop1 > n - r; loop1--) {
-		answer *= loop1;
-	}
-	for (loop1 = 2; loop1 <= r; loop1++) {
-		answer /= loop1;
-	}
-	cout << answer << endl;
+void output() {
+
 }
 //verge
