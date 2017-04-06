@@ -7,7 +7,6 @@ using std::endl;
 using std::fixed;
 using std::setprecision;
 
-//Project_Euler Problem
 //PAEKJOON online judge Problem1007.
 //문제.
 
@@ -69,7 +68,7 @@ void output() {
 	}
 	firstPos[loop1] = -1;
 	while (!firstPos[0]) {//백터 시작점 선택 루프.
-			//백터 선택 완료, 길이 계산.
+		//백터 선택 완료, 길이 계산.
 		xSum = ySum = 0;
 		for (temp1 = 0, loop1 = 0; loop1 < dotNum; loop1++) {
 			if (firstPos[temp1] == loop1) {
