@@ -18,6 +18,8 @@ using std::endl;
 //type, class
 
 //variable
+unsigned distance;//남은 거리.
+
 
 //function
 void input();
@@ -37,9 +39,27 @@ int main(int arg_num, char * argv[], char * env[]) {
 
 //function define
 void input() {
-
+	unsigned input1, input2;
+	cin >> input1 >> input2;
+	distance = input2 - input1;
 }
 void output() {
-
+	unsigned answer = 0;
+	for (unsigned loop1 = 2; 1; loop1 += 2) {
+		if (loop1 > distance ) {//증가 진행 불가능.
+			if (distance <= loop1 / 2) {
+				answer += 1; break;
+			}
+			else {
+				answer += 2; break;
+			}
+		}
+		else {//증가 진행.
+			distance -= loop1;
+			answer += 2;
+			if (!distance) { break; }
+		}
+	}
+	cout << answer << endl;
 }
 //verge
