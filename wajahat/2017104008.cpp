@@ -5,29 +5,38 @@
 #include <iostream>
 #include <time.h>
 #include <cmath>
+#include <windows.h>
+#include <assert.h>
 using namespace std;
+
+unsigned gcd(unsigned a, unsigned b) {
+	if (b == 0) {
+		assert(("Division with 0.", false)); return 1;
+	}
+	if (a == 0) {
+		return b;
+	}
+	else if (((a>b) ? a : b) % ((a>b) ? b : a) == 0) {
+		return ((a>b) ? b : a);
+	}
+	else {
+		return gcd(((a>b) ? b : a), ((a>b) ? a : b) % ((a>b) ? b : a));
+	}
+}
+unsigned lcm(unsigned a, unsigned b) {
+	return a * b / gcd(a, b);
+}
 
 int main() {
 	//Program start.
-	srand((unsigned)time(NULL));
-	int randomNum1 = rand() % 100 + 1;
-	int randomNum2 = rand() % 100 + 1;
-	int randomNum3 = rand() % 100 + 1;
-	double mean1, mean2, var1, var2, sDev1, sDev2;
-	
-	cout << "mean: " << (mean1 = (randomNum1 + randomNum2 + randomNum3) / 3.0) << endl;
-	cout << "variance: " << (var1 = (pow(randomNum1 - mean1, 2) + pow(randomNum2 - mean1, 2) + pow(randomNum3 - mean1, 2)) / 3.0) << endl;
-	cout << "standard deviation: " << (sDev1 = sqrt(var1)) << "\n\n";
-
-	randomNum1 = rand() % 100 + 1;
-	randomNum2 = rand() % 100 + 1;
-	randomNum3 = rand() % 100 + 1;
-	cout << "mean: " << (mean2 = (randomNum1 + randomNum2 + randomNum3) / 3.0) << endl;
-	cout << "variance: " << (var2 = (pow(randomNum1 - mean2, 2) + pow(randomNum2 - mean2, 2) + pow(randomNum3 - mean2, 2)) / 3.0) << endl;
-	cout << "standard deviation: " << (sDev2 = sqrt(var2)) << "\n\n";
-
-	cout << "mean diff: " << (mean1 - mean2) << endl;
-	cout << "variance diff: " << (var1 - var2) << endl;
-	cout << "standard deviation diff: " << (sDev1 - sDev2) << endl;
+	unsigned input1;
+	cout << "숫자 입력: "; cin >> input1;
+	for (int loop1 = 0; loop1 < input1; loop1++) {
+		for (int loop2 = 0; loop2 < input1; loop2++) {
+			if (loop2 < input1 - loop1 - 1) { cout << ' '; }
+			else { cout << '*'; }
+		}
+		cout << endl;
+	}
 	return 0;
 }
